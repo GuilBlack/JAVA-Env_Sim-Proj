@@ -6,12 +6,39 @@ import java.awt.image.BufferStrategy;
 public class Environment extends Canvas implements Runnable {
 
     public static final int WIDTH = 1280, HEIGHT = WIDTH / 16 * 9;
+    private static int numDucks = getRandomInt(5, 10), numLilies = (int)(numDucks * 1.5);
 
     private Thread thread;
     private boolean running = false;
+    private int[] rockX = {30, 1048, 280, 290, 500, 650, 890, 920};
+    private int[] rockY = {40, 256, 180, 520, 320, 430, 20, 600};
+
+
+    private Handler handler;
 
     public Environment() {
+        handler = new Handler();
+
         new Window(WIDTH, HEIGHT, "Duck Environment", this); //this will take the new environment object to create a new window
+
+        //creating some rocks
+        for(int i = 0; i < 8; i++) {
+            handler.addObject(new Rock(rockX[i], rockY[i], ID.Rock));
+        }
+        //creating some lilies
+        for (int i = 0; i < numLilies; i++) {
+            handler.addObject(new WaterLily(getRandomInt(44, 1200), getRandomInt(0, 600), ID.WaterLily));
+        }
+        //creating some ducks
+        for (int i = 0; i < numDucks; i++) {
+            handler.addObject(new Duck(getRandomInt(44, 1200), getRandomInt(0, 600), ID.smallDuck, handler));
+        }
+
+    }
+
+    public static int getRandomInt(double min, double max){
+        int x = (int)((Math.random()*((max-min)+1))+min);
+        return x;
     }
 
     //synchronized if we do multi-threading,
@@ -66,14 +93,15 @@ public class Environment extends Canvas implements Runnable {
         stop();
     }
 
+    //update each objects in the environment
     private void tick() {
-
+        handler.tick();
     }
 
     private void render() {
-        BufferStrategy bs = this.getBufferStrategy(); //creates a buffer strategy to update our display
+        BufferStrategy bs = this.getBufferStrategy(); //get a buffer strategy to update our display
         if(bs == null) {
-            this.createBufferStrategy(3); //doing a triple buffering
+            this.createBufferStrategy(2); //create a double buffering strategy
             return;
         }
 
@@ -83,6 +111,9 @@ public class Environment extends Canvas implements Runnable {
 
         g.setColor(Color.CYAN);
         g.fillRect(0, 0, WIDTH, HEIGHT);
+
+        //draw the objects in the game
+        handler.render(g);
 
         g.dispose(); //dispose of the graphics
         bs.show(); //display the buffer

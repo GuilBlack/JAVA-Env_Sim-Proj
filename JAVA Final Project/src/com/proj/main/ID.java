@@ -1,7 +1,9 @@
 package com.proj.main;
 
 public enum ID {
-    Duck(),
+    smallDuck(),
+    adultDuck(),
+    alphaDuck(),
     WaterLily(),
     Rock();
 }

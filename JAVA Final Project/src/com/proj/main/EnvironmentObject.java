@@ -1,12 +1,16 @@
 package com.proj.main;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 public abstract class EnvironmentObject {
 
     protected int x, y;
+    protected int velX, velY;
+    protected double health;
+    protected BufferedImage image;
     protected ID id;
-    protected int speedX, speedY;
 
     public EnvironmentObject(int x, int y, ID id) {
         this.x = x;
@@ -15,7 +19,8 @@ public abstract class EnvironmentObject {
     }
 
     public abstract void tick();
-    public abstract void render(Graphics g);
+    public abstract void render(Graphics g) throws IOException;
+    public abstract Rectangle getCollider();
 
     //getter and setter for coordinates
     public void setX(int x) {
@@ -31,19 +36,35 @@ public abstract class EnvironmentObject {
         return y;
     }
 
+    //getter and setter for health
+    public void setHealth(double health) {
+        this.health = health;
+    }
+    public double getHealth() {
+        return health;
+    }
+
+    //getter and setter for image
+    public void setImage(BufferedImage image) {
+        this.image = image;
+    }
+    public BufferedImage getImage() {
+        return image;
+    }
+
     //getter and setter for velocity
-    public void setSpeedX(int speedX) {
-        this.speedX = speedX;
-    }
-    public void setSpeedY(int speedY) {
-        this.speedY = speedY;
-    }
-    public int getSpeedX() {
-        return speedX;
-    }
-    public int getSpeedY() {
-        return speedY;
-    }
+//    public void setSpeedX(int speedX) {
+//        this.speedX = speedX;
+//    }
+//    public void setSpeedY(int speedY) {
+//        this.speedY = speedY;
+//    }
+//    public int getSpeedX() {
+//        return speedX;
+//    }
+//    public int getSpeedY() {
+//        return speedY;
+//    }
 
     //getter and setter for ID
     public void setId(ID id) {
