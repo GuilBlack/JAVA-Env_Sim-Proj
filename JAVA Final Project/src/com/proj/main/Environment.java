@@ -10,8 +10,8 @@ public class Environment extends Canvas implements Runnable {
 
     private Thread thread;
     private boolean running = false;
-    private int[] rockX = {30, 1048, 280, 290, 500, 650, 890, 920};
-    private int[] rockY = {40, 256, 180, 520, 320, 430, 20, 600};
+    private int[] rockX = {30, 1048, 280, 290, 650, 800, 920};
+    private int[] rockY = {40, 256, 180, 520, 430, 20, 600};
 
 
     private Handler handler;
@@ -22,7 +22,7 @@ public class Environment extends Canvas implements Runnable {
         new Window(WIDTH, HEIGHT, "Duck Environment", this); //this will take the new environment object to create a new window
 
         //creating some rocks
-        for(int i = 0; i < 8; i++) {
+        for(int i = 0; i < 7; i++) {
             handler.addObject(new Rock(rockX[i], rockY[i], ID.Rock));
         }
         //creating some lilies

@@ -19,6 +19,12 @@ public class Handler {
                 }
             }
         }
+        if (getRandomDouble() <= 0.005) {
+            addObject(new Duck(getRandomInt(44, 1200), getRandomInt(0, 600), ID.smallDuck, this));
+        }
+        if (getRandomDouble() <= 0.025) {
+            addObject(new WaterLily(getRandomInt(44, 1200), getRandomInt(0, 600), ID.WaterLily));
+        }
     }
 
     public void render(Graphics g) {
@@ -31,6 +37,16 @@ public class Handler {
                 e.printStackTrace();
             }
         }
+    }
+
+    private static double getRandomDouble() {
+        double r = Math.random();
+        return r;
+    }
+
+    private static int getRandomInt(double min, double max){
+        int x = (int)((Math.random()*((max-min)+1))+min);
+        return x;
     }
 
     //add an object to the environment

@@ -2,12 +2,28 @@ package com.proj.main;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 public class Duck extends EnvironmentObject {
     Handler handler;
     public static final int DUCK_WIDTH = 44;
     public static final int DUCK_HEIGHT = 46;
+    private static BufferedImage SMALL_DUCK;
+    private static BufferedImage ADULT_DUCK;
+    private static BufferedImage ALPHA_DUCK;
+
+    static {
+        try {
+            SMALL_DUCK = ImageIO.read(Duck.class.getResourceAsStream("/Images/smallDuck.png"));
+            ADULT_DUCK = ImageIO.read(Duck.class.getResourceAsStream("/Images/adultDuck.png"));
+            ALPHA_DUCK = ImageIO.read(Duck.class.getResourceAsStream("/Images/alphaDuck.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private int level = 0;
     private int tempWidth;
     private int healthBarX;
     private int tempX;
@@ -15,11 +31,7 @@ public class Duck extends EnvironmentObject {
     public Duck(int x, int y, ID id, Handler handler) {
         super(x, y, id);
         this.handler = handler;
-        try {
-            image = ImageIO.read(getClass().getResourceAsStream("/Images/smallDuck.png"));
-        }catch(IOException e) {
-            e.printStackTrace();
-        }
+        image = SMALL_DUCK;
         health = 50;
         velX = getRandomInt(-2, 2);
         velY = getRandomInt(-2, 2);
@@ -49,6 +61,20 @@ public class Duck extends EnvironmentObject {
             velX = getRandomInt(-2, 2);
         }
         collisionDetection();
+        if (level == 5) {
+            image = ADULT_DUCK;
+            setId(ID.adultDuck);
+        }else if (level == 10) {
+            image = ALPHA_DUCK;
+            setId(ID.alphaDuck);
+        }
+
+        if ((getId() == ID.alphaDuck) && (health <= 25)) {
+            level = 5;
+            image = ADULT_DUCK;
+            setId(ID.adultDuck);
+        }
+
         x += velX;
         y += velY;
         health -= 0.05;
@@ -103,15 +129,25 @@ public class Duck extends EnvironmentObject {
                     velY *= -1;
                     if (velX > 0) {
                         velX = getRandomInt(1, 2);
+                        x += 4;
                     }else {
                         velX = getRandomInt(-1, -2);
+                        x -= 4;
                     }
 
                     if (velY > 0) {
                         velY = getRandomInt(1, 2);
+                        y += 4;
                     }else {
                         velY = getRandomInt(-1, -2);
+                        y -= 4;
                     }
+                }
+            }else if (tempObject.getId() == ID.WaterLily) {
+                if (getCollider().intersects(tempObject.getCollider())) {
+                    handler.removeObject(tempObject);
+                    health = 50;
+                    level++;
                 }
             }
         }
