@@ -52,20 +52,6 @@ public abstract class EnvironmentObject {
         return image;
     }
 
-    //getter and setter for velocity
-//    public void setSpeedX(int speedX) {
-//        this.speedX = speedX;
-//    }
-//    public void setSpeedY(int speedY) {
-//        this.speedY = speedY;
-//    }
-//    public int getSpeedX() {
-//        return speedX;
-//    }
-//    public int getSpeedY() {
-//        return speedY;
-//    }
-
     //getter and setter for ID
     public void setId(ID id) {
         this.id = id;

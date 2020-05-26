@@ -26,6 +26,7 @@ public class Duck extends EnvironmentObject {
     private int level = 0;
     private int tempWidth;
     private int healthBarX;
+    private double maxHealth;
     private int tempX;
 
     public Duck(int x, int y, ID id, Handler handler) {
@@ -33,47 +34,31 @@ public class Duck extends EnvironmentObject {
         this.handler = handler;
         image = SMALL_DUCK;
         health = 50;
-        velX = getRandomInt(-2, 2);
-        velY = getRandomInt(-2, 2);
+        maxHealth = 50;
+        velX = getRandomInt(-3, 3);
+        velY = getRandomInt(-3, 3);
         if (velY == 0 && velX == 0) {
             int r = getRandomInt(0, 1);
             if (r == 0) {
-                velX = getRandomInt(-2, 2);
+                velX = getRandomInt(-3, 3);
                 if(velX == 0) {
-                    velX += 1;
+                    velX += 2;
                 }
             }else {
-                velY = getRandomInt(-2, 2);
+                velY = getRandomInt(-3, 3);
                 if(velY == 0) {
-                    velY += 1;
+                    velY += 2;
                 }
             }
         }
     }
 
     public void tick() {
-        if (x <= DUCK_WIDTH || x >= (Environment.WIDTH - 58)) {
-            velX *= -1;
-            velY = getRandomInt(-2, 2);
-        }
-        if (y <= 0 || y >= (Environment.HEIGHT - 80)) {
-            velY *= -1;
-            velX = getRandomInt(-2, 2);
-        }
+        maxHealth -= 0.005;
+        borderDetection();
         collisionDetection();
-        if (level == 5) {
-            image = ADULT_DUCK;
-            setId(ID.adultDuck);
-        }else if (level == 10) {
-            image = ALPHA_DUCK;
-            setId(ID.alphaDuck);
-        }
+        checkEvolution();
 
-        if ((getId() == ID.alphaDuck) && (health <= 25)) {
-            level = 5;
-            image = ADULT_DUCK;
-            setId(ID.adultDuck);
-        }
 
         x += velX;
         y += velY;
@@ -83,6 +68,37 @@ public class Duck extends EnvironmentObject {
     private static int getRandomInt(double min, double max){
         int x = (int)((Math.random()*((max-min)+1))+min);
         return x;
+    }
+
+    private void checkEvolution() {
+        if (level == 5) {
+            image = ADULT_DUCK;
+            setId(ID.adultDuck);
+        }else if (level == 10) {
+            image = ALPHA_DUCK;
+            setId(ID.alphaDuck);
+        }
+    }
+
+    private void borderDetection() {
+        if (x <= DUCK_WIDTH || x >= (Environment.WIDTH - 58)) {
+            velX *= -1;
+            velY = getRandomInt(-3, 3);
+            if (x <= DUCK_WIDTH) {
+                x += 5;
+            }else {
+                x -= 5;
+            }
+        }
+        if (y <= 0 || y >= (Environment.HEIGHT - 80)) {
+            velY *= -1;
+            velX = getRandomInt(-3, 3);
+            if (y <= 0) {
+                y += 5;
+            }else {
+                y -= 5;
+            }
+        }
     }
 
     public void render(Graphics g) {
@@ -100,7 +116,7 @@ public class Duck extends EnvironmentObject {
         g2d.draw(getCollider());
         g.drawImage(image, x, y, tempWidth, DUCK_HEIGHT, null);
         g.setColor(Color.GRAY);
-        g.fillRect((healthBarX - 5), (y - 10), 50, 5);
+        g.fillRect((healthBarX - 5), (y - 10), (int)(maxHealth), 5);
         g.setColor(Color.green);
         g.fillRect((healthBarX - 5), (y - 10), (int)(health), 5);
     }
@@ -128,25 +144,25 @@ public class Duck extends EnvironmentObject {
                     velX *= -1;
                     velY *= -1;
                     if (velX > 0) {
-                        velX = getRandomInt(1, 2);
-                        x += 4;
+                        velX = getRandomInt(1, 3);
+                        x += 5;
                     }else {
-                        velX = getRandomInt(-1, -2);
-                        x -= 4;
+                        velX = getRandomInt(-1, -3);
+                        x -= 5;
                     }
 
                     if (velY > 0) {
-                        velY = getRandomInt(1, 2);
-                        y += 4;
+                        velY = getRandomInt(1, 3);
+                        y += 5;
                     }else {
-                        velY = getRandomInt(-1, -2);
-                        y -= 4;
+                        velY = getRandomInt(-1, -3);
+                        y -= 5;
                     }
                 }
             }else if (tempObject.getId() == ID.WaterLily) {
                 if (getCollider().intersects(tempObject.getCollider())) {
                     handler.removeObject(tempObject);
-                    health = 50;
+                    health = maxHealth;
                     level++;
                 }
             }

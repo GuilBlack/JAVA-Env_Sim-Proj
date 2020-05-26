@@ -11,7 +11,7 @@ public class Environment extends Canvas implements Runnable {
     private Thread thread;
     private boolean running = false;
     private int[] rockX = {30, 1048, 280, 290, 650, 800, 920};
-    private int[] rockY = {40, 256, 180, 520, 430, 20, 600};
+    private int[] rockY = {40, 256, 180, 520, 430, 35, 600};
 
 
     private Handler handler;
