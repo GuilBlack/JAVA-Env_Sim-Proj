@@ -23,6 +23,9 @@ public class Duck extends EnvironmentObject {
         }
     }
 
+    private Whistle whistle;
+    private boolean isWhistling = false;
+
     private int level = 0;
     private int tempWidth;
     private int healthBarX;
@@ -35,6 +38,7 @@ public class Duck extends EnvironmentObject {
         image = SMALL_DUCK;
         health = 50;
         maxHealth = 50;
+        whistle = new Whistle();
         velX = getRandomInt(-3, 3);
         velY = getRandomInt(-3, 3);
         if (velY == 0 && velX == 0) {
@@ -77,6 +81,11 @@ public class Duck extends EnvironmentObject {
         }else if (level == 10) {
             image = ALPHA_DUCK;
             setId(ID.alphaDuck);
+            if (!isWhistling) {
+                whistle.whistleStart();
+                System.out.println("it's out");
+                isWhistling = true;
+            }
         }
     }
 

@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b717c0bf-52f8-4dc3-bf82-40269e55df79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/proj/main/Whistle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Audio/bbwd1.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JAVA Final Project/com/proj/main/Duck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA Final Project/com/proj/main/Duck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JAVA Final Project/com/proj/main/Environment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA Final Project/com/proj/main/Environment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JAVA Final Project/com/proj/main/EnvironmentObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA Final Project/com/proj/main/EnvironmentObject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/proj/main/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/proj/main/Duck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/proj/main/Environment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/proj/main/Environment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/proj/main/EnvironmentObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/proj/main/EnvironmentObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/proj/main/Whistle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/proj/main/Whistle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,13 +24,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1c4rGK99LI1RBmH6AaVmkKN57ya" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -91,7 +90,8 @@
       <workItem from="1589969317229" duration="47090000" />
       <workItem from="1590348071129" duration="614000" />
       <workItem from="1590349007272" duration="750000" />
-      <workItem from="1590506677286" duration="3084000" />
+      <workItem from="1590506677286" duration="4051000" />
+      <workItem from="1590581234531" duration="7960000" />
     </task>
     <task id="LOCAL-00001" summary="test from intellij">
       <created>1590349105056</created>
@@ -100,15 +100,37 @@
       <option name="project" value="LOCAL" />
       <updated>1590349105057</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fix borders &amp; Whistle creation">
+      <created>1590509938396</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1590509938396</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="test from intellij" />
-    <option name="LAST_COMMIT_MESSAGE" value="test from intellij" />
+    <MESSAGE value="Fix borders &amp; Whistle creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix borders &amp; Whistle creation" />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser" timestamp="1590169275363">
@@ -119,30 +141,30 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="718" y="410" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1080@0.0.1920.1080" timestamp="1589899387186" />
-    <state x="416" y="120" width="1064" height="812" key="CommitChangelistDialog2" timestamp="1590509908349">
+    <state x="416" y="120" width="1064" height="812" key="CommitChangelistDialog2" timestamp="1590509936396">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="416" y="120" width="1064" height="812" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1590509908349" />
+    <state x="416" y="120" width="1064" height="812" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1590509936396" />
     <state x="740" y="294" key="FileChooserDialogImpl" timestamp="1590349154503">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="294" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1590349154503" />
-    <state width="1877" height="235" key="GridCell.Tab.0.bottom" timestamp="1590509919532">
+    <state width="1877" height="414" key="GridCell.Tab.0.bottom" timestamp="1590591923033">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="235" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1590509919532" />
-    <state width="1877" height="235" key="GridCell.Tab.0.center" timestamp="1590509919532">
+    <state width="1877" height="414" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1590591923033" />
+    <state width="1877" height="414" key="GridCell.Tab.0.center" timestamp="1590591923032">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="235" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1590509919532" />
-    <state width="1877" height="235" key="GridCell.Tab.0.left" timestamp="1590509919532">
+    <state width="1877" height="414" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1590591923032" />
+    <state width="1877" height="414" key="GridCell.Tab.0.left" timestamp="1590591923032">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="235" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1590509919532" />
-    <state width="1877" height="235" key="GridCell.Tab.0.right" timestamp="1590509919532">
+    <state width="1877" height="414" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1590591923032" />
+    <state width="1877" height="414" key="GridCell.Tab.0.right" timestamp="1590591923032">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="235" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1590509919532" />
+    <state width="1877" height="414" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1590591923032" />
     <state width="1877" height="78" key="GridCell.Tab.1.bottom" timestamp="1590344376713">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -163,10 +185,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="461" y="182" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1590508020067" />
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1590349111570">
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1590510730586">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1590349111570" />
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1590510730586" />
     <state x="769" y="456" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590509799161">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
