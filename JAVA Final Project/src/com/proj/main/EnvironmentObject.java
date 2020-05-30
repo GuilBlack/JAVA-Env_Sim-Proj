@@ -36,6 +36,20 @@ public abstract class EnvironmentObject {
         return y;
     }
 
+    //getter and setter for velocities
+    public void setVelX(int velX) {
+        this.velX = velX;
+    }
+    public void setVelY(int velY) {
+        this.velY = velY;
+    }
+    public int getVelX() {
+        return velX;
+    }
+    public int getVelY() {
+        return velY;
+    }
+
     //getter and setter for health
     public void setHealth(double health) {
         this.health = health;

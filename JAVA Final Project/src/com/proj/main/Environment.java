@@ -63,7 +63,7 @@ public class Environment extends Canvas implements Runnable {
     //the game loop
     public void run() {
         long lastTime = System.nanoTime();
-        double amountOfTicks = 60.0; // tics/sec we want (for the game it's the number of FPS wanted)
+        double amountOfTicks = 61.0; // tics/sec we want (for the game it's the number of FPS wanted)
         double ns = 1000000000 / amountOfTicks; //nanosecs per tick
         double delta = 0;
         long timer = System.currentTimeMillis();
@@ -75,21 +75,27 @@ public class Environment extends Canvas implements Runnable {
             //when delta >= 1, 1 tick has passed
             while(delta >= 1) {
                 tick();
+                render();
+                frames++;
                 delta--;
             }
 
-            if(running) {
-                render();
-            }
-            frames++;
+            //if you don't want to cap your frames to 61
+            //comment out render() and frames++ in the while loop above
+            //uncomment the 4 lines under this
+//            if(running) {
+//                render();
+//                frames++;
+//            }
 
-            if(System.currentTimeMillis() - timer > 1000)
-            {
+            //display in console number of fps
+            if(System.currentTimeMillis() - timer > 1000) {
                 timer += 1000;
                 System.out.println("FPS: "+ frames);
                 frames = 0;
             }
         }
+        //stop the thread if the simulation isn't running anymore
         stop();
     }
 
