@@ -10,29 +10,30 @@ public class Environment extends Canvas implements Runnable {
 
     private Thread thread;
     private boolean running = false;
+    private Menu menu;
+
     private int[] rockX = {30, 1048, 280, 290, 650, 800, 920};
     private int[] rockY = {40, 256, 180, 520, 430, 35, 600};
 
+    //states of the environment
+    public enum STATE {
+        Menu,
+        Game
+    }
+
+    //beginning state
+    public STATE envState = STATE.Menu;
 
     private Handler handler;
 
     public Environment() {
         handler = new Handler();
 
-        new Window(WIDTH, HEIGHT, "Duck Environment", this); //this will take the new environment object to create a new window
+        //creating a new menu
+        menu = new Menu(this, handler);
+        this.addMouseListener(menu);
 
-        //creating some rocks
-        for(int i = 0; i < 7; i++) {
-            handler.addObject(new Rock(rockX[i], rockY[i], ID.Rock));
-        }
-        //creating some lilies
-        for (int i = 0; i < numLilies; i++) {
-            handler.addObject(new WaterLily(getRandomInt(44, 1200), getRandomInt(0, 600), ID.WaterLily));
-        }
-        //creating some ducks
-        for (int i = 0; i < numDucks; i++) {
-            handler.addObject(new Duck(getRandomInt(392, 990), getRandomInt(40, 380), ID.smallDuck, handler));
-        }
+        new Window(WIDTH, HEIGHT, "Duck Environment", this); //this will take the new environment object to create a new window
 
     }
 
@@ -99,9 +100,13 @@ public class Environment extends Canvas implements Runnable {
         stop();
     }
 
-    //update each objects in the environment
     private void tick() {
-        handler.tick();
+        if (envState == STATE.Game) {
+            //update each objects in the environment
+            handler.tick();
+        }else {
+            menu.tick();
+        }
     }
 
     private void render() {
@@ -115,11 +120,18 @@ public class Environment extends Canvas implements Runnable {
         // to make sure the strategy is validated
         Graphics g = bs.getDrawGraphics();
 
-        g.setColor(Color.CYAN);
-        g.fillRect(0, 0, WIDTH, HEIGHT);
+
 
         //draw the objects in the game
-        handler.render(g);
+        if (envState == STATE.Game) {
+            g.setColor(Color.CYAN);
+            g.fillRect(0, 0, WIDTH, HEIGHT);
+            handler.render(g);
+        }else {
+            g.setColor(Color.BLACK);
+            g.fillRect(0, 0, WIDTH, HEIGHT);
+            menu.render(g);
+        }
 
         g.dispose(); //dispose of the graphics
         bs.show(); //display the buffer

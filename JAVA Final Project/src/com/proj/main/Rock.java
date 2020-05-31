@@ -24,9 +24,9 @@ public class Rock extends EnvironmentObject {
     }
 
     public void render(Graphics g) {
-        Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.RED);
-        g2d.draw(getCollider());
+//        Graphics2D g2d = (Graphics2D) g;
+//        g.setColor(Color.RED);
+//        g2d.draw(getCollider());
         g.drawImage(image, x, y, 56, 45, null);
     }
 }

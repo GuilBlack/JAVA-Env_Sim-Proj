@@ -24,9 +24,9 @@ public class WaterLily extends EnvironmentObject {
     }
 
     public void render(Graphics g) throws IOException {
-        Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.green);
-        g2d.draw(getCollider());
+//        Graphics2D g2d = (Graphics2D) g;
+//        g.setColor(Color.green);
+//        g2d.draw(getCollider());
         g.drawImage(image, x, y, null);
     }
 }
