@@ -31,7 +31,7 @@ public class Environment extends Canvas implements Runnable {
         }
         //creating some ducks
         for (int i = 0; i < numDucks; i++) {
-            handler.addObject(new Duck(getRandomInt(44, 1200), getRandomInt(0, 600), ID.smallDuck, handler));
+            handler.addObject(new Duck(getRandomInt(392, 990), getRandomInt(40, 380), ID.smallDuck, handler));
         }
 
     }
@@ -125,6 +125,7 @@ public class Environment extends Canvas implements Runnable {
         bs.show(); //display the buffer
     }
 
+    //main
     public static void main(String args[]) {
         new Environment();
     }

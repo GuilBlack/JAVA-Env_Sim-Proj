@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b717c0bf-52f8-4dc3-bf82-40269e55df79" name="Default Changelist" comment="lining up of the ducks.">
+    <list default="true" id="b717c0bf-52f8-4dc3-bf82-40269e55df79" name="Default Changelist" comment="last duck in line goes in other line if other chief duck whistles.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JAVA Final Project/com/proj/main/Duck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA Final Project/com/proj/main/Duck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JAVA Final Project/com/proj/main/EnvironmentObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA Final Project/com/proj/main/EnvironmentObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA Final Project/com/proj/main/Environment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA Final Project/com/proj/main/Environment.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/proj/main/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/proj/main/Duck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/proj/main/Environment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/proj/main/Environment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/proj/main/EnvironmentObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/proj/main/EnvironmentObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/proj/main/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/proj/main/Handler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/proj/main/Whistle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/proj/main/Whistle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +93,8 @@
       <workItem from="1590348071129" duration="614000" />
       <workItem from="1590349007272" duration="750000" />
       <workItem from="1590506677286" duration="4051000" />
-      <workItem from="1590581234531" duration="36471000" />
+      <workItem from="1590581234531" duration="36594000" />
+      <workItem from="1590924939306" duration="9358000" />
     </task>
     <task id="LOCAL-00001" summary="test from intellij">
       <created>1590349105056</created>
@@ -116,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590593115839</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="lining up of the ducks.">
+      <created>1590858260098</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1590858260098</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,41 +149,42 @@
     <MESSAGE value="Fix borders &amp; Whistle creation" />
     <MESSAGE value="whistle is functional." />
     <MESSAGE value="lining up of the ducks." />
-    <option name="LAST_COMMIT_MESSAGE" value="lining up of the ducks." />
+    <MESSAGE value="last duck in line goes in other line if other chief duck whistles." />
+    <option name="LAST_COMMIT_MESSAGE" value="last duck in line goes in other line if other chief duck whistles." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser" timestamp="1590853452816">
+    <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser" timestamp="1590928531163">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1590853452816" />
+    <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1590928531163" />
     <state x="718" y="410" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1589899387186">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="718" y="410" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1080@0.0.1920.1080" timestamp="1589899387186" />
-    <state x="416" y="120" width="1064" height="812" key="CommitChangelistDialog2" timestamp="1590857762685">
+    <state x="416" y="120" width="1064" height="812" key="CommitChangelistDialog2" timestamp="1590942807910">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="416" y="120" width="1064" height="812" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1590857762685" />
+    <state x="416" y="120" width="1064" height="812" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1590942807910" />
     <state x="740" y="294" key="FileChooserDialogImpl" timestamp="1590349154503">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="294" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1590349154503" />
-    <state width="1877" height="228" key="GridCell.Tab.0.bottom" timestamp="1590857832639">
+    <state width="1877" height="213" key="GridCell.Tab.0.bottom" timestamp="1590943172743">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="228" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1590857832639" />
-    <state width="1877" height="228" key="GridCell.Tab.0.center" timestamp="1590857832638">
+    <state width="1877" height="213" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1590943172743" />
+    <state width="1877" height="213" key="GridCell.Tab.0.center" timestamp="1590943172743">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="228" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1590857832638" />
-    <state width="1877" height="228" key="GridCell.Tab.0.left" timestamp="1590857832638">
+    <state width="1877" height="213" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1590943172743" />
+    <state width="1877" height="213" key="GridCell.Tab.0.left" timestamp="1590943172743">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="228" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1590857832638" />
-    <state width="1877" height="228" key="GridCell.Tab.0.right" timestamp="1590857832639">
+    <state width="1877" height="213" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1590943172743" />
+    <state width="1877" height="213" key="GridCell.Tab.0.right" timestamp="1590943172743">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="228" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1590857832639" />
+    <state width="1877" height="213" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1590943172743" />
     <state width="1877" height="78" key="GridCell.Tab.1.bottom" timestamp="1590344376713">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -196,10 +205,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="461" y="182" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1590508020067" />
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1590593127486">
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1590858265677">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1590593127486" />
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1590858265677" />
     <state x="769" y="456" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590509799161">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

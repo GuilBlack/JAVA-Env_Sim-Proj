@@ -28,9 +28,7 @@ public class Whistle implements Runnable {
 
     public void run() {
         playWhistle();
-        System.out.println("whistle finished");
         stop();
-        System.out.println("thread stopped");
     }
 
     public synchronized void whistleStart() {

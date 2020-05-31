@@ -42,7 +42,6 @@ public class Duck extends EnvironmentObject {
     //vars useful for the alpha && the ducks in line
     private int alphaDuckID;
 
-
     private boolean isLinedUp = false;
     public boolean isLinedUp() {
         return isLinedUp;
@@ -67,7 +66,13 @@ public class Duck extends EnvironmentObject {
         return lineID;
     }
 
-
+    private boolean lastInLine = false;
+    public boolean isLastInLine() {
+        return lastInLine;
+    }
+    public void setLastInLine(boolean lastInLine) {
+        this.lastInLine = lastInLine;
+    }
 
     private Whistle whistle;
     private boolean isAlpha = false;
@@ -113,6 +118,8 @@ public class Duck extends EnvironmentObject {
                 }
             }
         }
+
+        //init prev coords array
         for (int i = 0; i < 120; i++) {
             linePosX.add(0);
             linePosY.add(0);
@@ -152,11 +159,13 @@ public class Duck extends EnvironmentObject {
         }
     }
 
+    //get random ints
     private static int getRandomInt(double min, double max){
         int x = (int)((Math.random()*((max-min)+1))+min);
         return x;
     }
 
+    //check based on the level if the duck will evolve or not
     private void checkEvolution() {
         if (level == 4) {
             image = ADULT_DUCK;
@@ -165,25 +174,21 @@ public class Duck extends EnvironmentObject {
             image = ALPHA_DUCK;
             setId(ID.alphaDuck);
 
+            //if it's transforming into an alpha it will whistle
+            //and the line will be created
             if (!isAlpha) {
                 whistle.whistleStart();
-                System.out.println("it's out");
                 ++alphaDuckCounter;
                 alphaDuckID = alphaDuckCounter;
-                System.out.println(alphaDuckCounter);
-                System.out.println(alphaDuckID);
-                System.out.println(x + " " + y + " " + velX + " " + velY);
-                System.out.println(linePosX);
-                System.out.println(linePosY);
-                System.out.println(lineVelX);
-                System.out.println(lineVelY);
                 createDuckLine();
                 isAlpha = true;
             }
         }
     }
 
+    //check for the map borders
     private void borderDetection() {
+        //check for borders on the right and the left
         if (x <= DUCK_WIDTH || x >= (Environment.WIDTH - 58)) {
             velX *= -1;
             velY = getRandomInt(-3, 3);
@@ -193,6 +198,8 @@ public class Duck extends EnvironmentObject {
                 x -= 5;
             }
         }
+
+        //check for borders on the top and bottom
         if (y <= 0 || y >= (Environment.HEIGHT - 80)) {
             velY *= -1;
             velX = getRandomInt(-3, 3);
@@ -204,8 +211,11 @@ public class Duck extends EnvironmentObject {
         }
     }
 
+    //render the ducks
+    //depending on the direction they are going to
+    //will flip the image
     public void render(Graphics g) {
-        Graphics2D g2d = (Graphics2D) g;
+//        Graphics2D g2d = (Graphics2D) g;
         if (velX < 0) {
             tempWidth = DUCK_WIDTH * -1;
             tempX = x - 44;
@@ -215,8 +225,8 @@ public class Duck extends EnvironmentObject {
             tempX = x;
             healthBarX = x;
         }
-        g.setColor(Color.MAGENTA);
-        g2d.draw(getCollider());
+//        g.setColor(Color.MAGENTA);
+//        g2d.draw(getCollider());
         g.drawImage(image, x, y, tempWidth, DUCK_HEIGHT, null);
         g.setColor(Color.GRAY);
         g.fillRect((healthBarX - 5), (y - 10), (int)(maxHealth), 5);
@@ -224,6 +234,7 @@ public class Duck extends EnvironmentObject {
         g.fillRect((healthBarX - 5), (y - 10), (int)(health), 5);
     }
 
+    //check the *limits* of the duck
     public Rectangle getCollider() {
         if (velX < 0) {
             tempX = x - 44;
@@ -291,19 +302,35 @@ public class Duck extends EnvironmentObject {
     //sets up the line of ducks
     private void createDuckLine() {
         int fullLine = 0;
+
+        //check for the last duck of each existing lines of ducks
+        for (int i = 0; i < handler.object.size(); i++) {
+            EnvironmentObject tempObject = handler.object.get(i);
+
+            if (tempObject.getId() == ID.smallDuck || tempObject.getId() == ID.adultDuck) {
+                Duck tempDuck = (Duck)tempObject;
+
+                if (tempDuck.isLinedUp() && tempDuck.isLastInLine()) {
+                    ++fullLine;
+                    tempDuck.setLinedUp(true);
+                    tempDuck.setLineNumber(fullLine);
+                    tempDuck.setLineID(alphaDuckID);
+                    setFollowDucksPos(tempDuck, fullLine);
+                }
+            }
+        }
+
+        //will add some ducks in the line
         for (int i = 0; i < handler.object.size(); i++) {
             if (fullLine < 6) {
                 EnvironmentObject tempObject = handler.object.get(i);
                 if (tempObject.getId() == ID.smallDuck || tempObject.getId() == ID.adultDuck) {
                     Duck tempDuck = (Duck)tempObject;
-                    System.out.println("create duck temp object");
                     if (!tempDuck.isLinedUp()) {
                         ++fullLine;
-                        System.out.println("is lined up");
                         tempDuck.setLinedUp(true);
                         tempDuck.setLineNumber(fullLine);
                         tempDuck.setLineID(alphaDuckID);
-                        System.out.println("lineID: " + tempDuck.getLineID() + ", isLinedUp: " + tempDuck.isLinedUp() + ", lineNumber: " + tempDuck.getLineNumber());
                         setFollowDucksPos(tempDuck, fullLine);
                     }
                 }
@@ -313,22 +340,38 @@ public class Duck extends EnvironmentObject {
         }
     }
 
+    //check the ducks in the line of the alpha duck
+    //update their stats && coords accordingly
     private void ducksFollow() {
         int fullLine = 0;
+        //prev vars are to check the last in line
+        int prevDuck = 0;
+
         for (int i = 0; i < handler.object.size(); i++) {
             EnvironmentObject tempObject = handler.object.get(i);
+            EnvironmentObject prevTempObj = handler.object.get(prevDuck);
+
             if (tempObject.getId() == ID.smallDuck || tempObject.getId() == ID.adultDuck) {
                 Duck tempDuck = (Duck)tempObject;
+
+                //check if the duck in in the line and update its stats
                 if (tempDuck.isLinedUp() && tempDuck.getLineID() == alphaDuckID && fullLine < 6) {
                     ++fullLine;
                     tempDuck.setMaxHealth(tempDuck.getMaxHealth() - 0.0025);
                     tempDuck.setHealth(tempDuck.getMaxHealth());
                     setFollowDucksPos(tempDuck, fullLine);
+                    tempDuck.setLastInLine(true);
+                    if (prevTempObj.getId() == ID.smallDuck || prevTempObj.getId() == ID.adultDuck) {
+                        Duck prevTempDuck = (Duck)prevTempObj;
+                        prevTempDuck.setLastInLine(false);
+                    }
+                    prevDuck = i;
                 }
             }
         }
     }
 
+    //update the coords of the ducks in a line
     private void setFollowDucksPos(Duck tempDuck, int fullLine) {
         tempDuck.setX(linePosX.get(fullLine * 20 - 1));
         tempDuck.setY(linePosY.get(fullLine * 20 - 1));
@@ -346,6 +389,7 @@ public class Duck extends EnvironmentObject {
                     tempDuck.setLinedUp(false);
                     tempDuck.setLineID(-1);
                     tempDuck.setLineNumber(-1);
+                    tempDuck.setLastInLine(false);
                 }
 
             }
