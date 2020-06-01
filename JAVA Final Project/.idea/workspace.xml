@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b717c0bf-52f8-4dc3-bf82-40269e55df79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/main.uml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/proj/main/ID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/proj/main/ID.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +90,7 @@
       <workItem from="1590506677286" duration="4051000" />
       <workItem from="1590581234531" duration="36594000" />
       <workItem from="1590924939306" duration="17388000" />
-      <workItem from="1590993917862" duration="1478000" />
+      <workItem from="1590993917862" duration="3534000" />
     </task>
     <task id="LOCAL-00001" summary="test from intellij">
       <created>1590349105056</created>
@@ -136,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590952036294</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Class Diagram Added.">
+      <created>1590995426133</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1590995426133</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,9 +168,14 @@
     <MESSAGE value="lining up of the ducks." />
     <MESSAGE value="last duck in line goes in other line if other chief duck whistles." />
     <MESSAGE value="Menu Implementation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Menu Implementation." />
+    <MESSAGE value="Class Diagram Added." />
+    <option name="LAST_COMMIT_MESSAGE" value="Class Diagram Added." />
   </component>
   <component name="WindowStateProjectService">
+    <state x="414" y="194" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590998484203">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="414" y="194" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1590998484203" />
     <state x="765" y="249" key="#com.intellij.ide.util.MemberChooser" timestamp="1590928531163">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -174,10 +184,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="718" y="410" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1080@0.0.1920.1080" timestamp="1589899387186" />
-    <state x="416" y="120" width="1064" height="812" key="CommitChangelistDialog2" timestamp="1590952033452">
+    <state x="416" y="120" width="1064" height="812" key="CommitChangelistDialog2" timestamp="1590995424687">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="416" y="120" width="1064" height="812" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1590952033452" />
+    <state x="416" y="120" width="1064" height="812" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1590995424687" />
     <state x="704" y="122" key="Diagram.Print.Preview.Dialog" timestamp="1590994657508">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -222,10 +232,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="461" y="182" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1590508020067" />
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1590952044240">
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1590995428641">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1590952044240" />
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1590995428641" />
     <state x="769" y="456" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590509799161">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

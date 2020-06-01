@@ -6,14 +6,10 @@ import java.awt.image.BufferStrategy;
 public class Environment extends Canvas implements Runnable {
 
     public static final int WIDTH = 1280, HEIGHT = WIDTH / 16 * 9;
-    private static int numDucks = getRandomInt(5, 10), numLilies = (int)(numDucks * 1.5);
 
     private Thread thread;
     private boolean running = false;
     private Menu menu;
-
-    private int[] rockX = {30, 1048, 280, 290, 650, 800, 920};
-    private int[] rockY = {40, 256, 180, 520, 430, 35, 600};
 
     //states of the environment
     public enum STATE {
