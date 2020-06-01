@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.proj.main</OriginalElement>
+  <nodes>
+    <node x="0.0" y="1291.0">com.proj.main.Handler</node>
+    <node x="642.0" y="0.0">com.proj.main.Environment</node>
+    <node x="0.0" y="725.0">com.proj.main.Rock</node>
+    <node x="715.5" y="539.0">com.proj.main.Environment.STATE</node>
+    <node x="917.0" y="0.0">com.proj.main.Menu</node>
+    <node x="1240.0" y="0.0">com.proj.main.Whistle</node>
+    <node x="306.0" y="1291.0">com.proj.main.ID</node>
+    <node x="425.0" y="1291.0">com.proj.main.Window</node>
+    <node x="191.5" y="0.0">com.proj.main.EnvironmentObject</node>
+    <node x="434.0" y="725.0">com.proj.main.WaterLily</node>
+    <node x="183.0" y="363.0">com.proj.main.Duck</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.proj.main.Duck" target="com.proj.main.EnvironmentObject">
+      <point x="0.0" y="-441.5" />
+      <point x="0.0" y="156.5" />
+    </edge>
+    <edge source="com.proj.main.WaterLily" target="com.proj.main.EnvironmentObject">
+      <point x="0.0" y="-79.5" />
+      <point x="515.5" y="338.0" />
+      <point x="369.8333333333333" y="338.0" />
+      <point x="71.33333333333331" y="156.5" />
+    </edge>
+    <edge source="com.proj.main.Environment.STATE" target="com.proj.main.Environment">
+      <point x="0.0" y="-37.5" />
+      <point x="0.0" y="244.5" />
+    </edge>
+    <edge source="com.proj.main.Rock" target="com.proj.main.EnvironmentObject">
+      <point x="0.0" y="-79.5" />
+      <point x="81.5" y="338.0" />
+      <point x="227.16666666666669" y="338.0" />
+      <point x="-71.33333333333331" y="156.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="403.6428571428571" y="703.5714285714284" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

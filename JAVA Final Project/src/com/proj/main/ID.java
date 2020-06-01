@@ -1,5 +1,5 @@
 package com.proj.main;
-//ok
+//Object IDs
 public enum ID {
     smallDuck(),
     adultDuck(),
